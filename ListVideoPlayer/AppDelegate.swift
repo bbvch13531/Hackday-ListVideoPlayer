@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import AVFoundation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +18,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
+    window = UIWindow(frame: UIScreen.main.bounds)
+    
+    let videoList = VideoListViewController()
+    videoList.videos = Video.allVideos()
+    videoList.title = "Hackday"
+    
+    let naviController = UINavigationController(rootViewController: videoList)
+  
+    window?.rootViewController = naviController
+    window?.makeKeyAndVisible()
+    
     return true
   }
 
