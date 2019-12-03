@@ -32,7 +32,7 @@ class Video: NSObject {
     let subtitles = ["test1", "test2", "test3", "test4", "test5", "test6"]
     
     for (idx, name) in names.enumerated() {
-      let stringpath = "http://210.113.90.239:8081/" + titles[idx]
+      let stringpath =  + titles[idx]
       guard let urlPath = URL(string: stringpath + ".mp4") else { return [Video]() }
 //      let urlPath = URL(fileURLWithPath: stringpath + ".mp4")
 //      let thumbString = "Thumbnails/" + titles[idx] + ".jpg"
